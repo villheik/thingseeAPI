@@ -7,7 +7,7 @@ The api is implemented with Node.js. It accesses a postgreSQL database
 * express
 * pg
 * connect
-* body-parse
+* body-parser
 
 To access the database myapi.js requires a config.json file:
 
