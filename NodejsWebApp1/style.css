@@ -1,0 +1,19 @@
+﻿#header{
+    text-align: center;
+}
+
+#jsonInput {
+    padding: 10px 35%;
+}
+table {
+    border: 1px solid black;
+    width:100%;   
+}
+
+tr:nth-child(even){
+    background-color: #f2f2f2;
+}
+
+tr:hover {
+    background-color: #746f6f;
+}
