@@ -7,7 +7,7 @@
     }
 
     componentDidMount() {
-        fetch('http://localhost:3000/')
+        fetch('http://192.168.0.103:3000/')
             .then((response) => {
                 return response.json();
             })
