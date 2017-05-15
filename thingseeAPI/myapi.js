@@ -34,12 +34,46 @@ client.connect(function (err) {
 app.use(bodyParser.json({ extended: true }));
 
 app.post('/', function (request, response) {
-    client.query("INSERT INTO data(temperature, battery) values(" + request.body.temperature + "," + request.body.battery+");");
-    response.send('successfull');
+    var pId = request.body[0].engine.pId;
+
+    //check if id exists, first one has to be put in manually
+    client.query("SELECT pId FROM data WHERE pId == " + pId + ";", {}, function (result, err) {
+        if (result.length === 0) {
+            console.log("Didn't find purpose ID");
+            return;
+        }
+        
+    });
+
+    var ts = request.body[0].engine.ts;
+    var results = {};
+
+    for (var i = 0; i < request.body[0].senses.length; i++) {
+        var current = request.body[0].senses[i];
+        if (current.sId === "0x00060100") {
+            results["temperature"] = current.val;
+        }
+        else if (current.sId === "0x00030200") {
+            results["battery"] = current.val;
+        }       
+    }
+    //Delete old values (only keep last 20)
+    client.query("SELECT * FROM data ORDER BY ts;", function (result) {
+        if (result !== null) {
+            client.query("DELETE FROM data WHERE id IN (SELECT id FROM (SELECT id, row_number() OVER (ORDER BY ts DESC) RowNumber from data) tt WHERE RowNumber > 20);");
+        }
+    });
+    client.query("INSERT INTO data(temperature, battery, pid, ts) values(" + results.temperature + "," + results.battery + ",'" + pId + "'," + ts + ");", function (err) {
+        if (err) {
+            console.log(err);
+        }
+
+    });
+    
 });
 
 app.get('/', function (request, response) {
-    client.query("SELECT temperature, battery FROM data;", {}, function (err, result) {
+    client.query("SELECT temperature, battery FROM data ORDER BY ts DESC;", {}, function (err, result) {
         if (err) {
             return next(err);
         }
