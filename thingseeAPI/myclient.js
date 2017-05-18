@@ -20,6 +20,9 @@
         const data = this.state.data.map((json, index) =>
             <tr key={index}>
                 <td>
+                    {json.ts}
+                </td>
+                <td>
                     {json.temperature}
                 </td>
                 <td>
