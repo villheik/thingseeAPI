@@ -20,6 +20,11 @@ app.use(function (req, res, next) {
     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
     next();
 });
+
+app.use('/js', express.static(__dirname + '/node_modules/bootstrap/dist/js')); // redirect bootstrap JS
+app.use('/js', express.static(__dirname + '/node_modules/jquery/dist')); // redirect JS jQuery
+app.use('/css', express.static(__dirname + '/node_modules/bootstrap/dist/css')); // redirect CSS bootstrap
+
 //connect to postgreSQL database
 var pg = require('pg');
 var conString = "postgres://" + loginData.user + ":" + loginData.password + "@" + loginData.dbAddress + ":" + loginData.dbPort + "/" + loginData.databaseName;
@@ -73,7 +78,7 @@ app.post('/', function (request, response) {
 });
 
 app.get('/', function (request, response) {
-    client.query("SELECT temperature, battery FROM data ORDER BY ts DESC;", {}, function (err, result) {
+    client.query("SELECT ts, temperature, battery FROM data ORDER BY ts DESC;", {}, function (err, result) {
         if (err) {
             return next(err);
         }

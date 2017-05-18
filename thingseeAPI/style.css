@@ -1,19 +1,67 @@
-﻿#header{
-    text-align: center;
+﻿.tsDataTable {
+    border: 1px solid #009933;
+    width:100%;      
 }
 
-#jsonInput {
-    padding: 10px 35%;
-}
-table {
-    border: 1px solid black;
-    width:100%;   
-}
-
-tr:nth-child(even){
+.tsDataTable tr:nth-child(even){
     background-color: #f2f2f2;
 }
 
-tr:hover {
+.tsDataTable tr:hover {
     background-color: #746f6f;
+}
+
+.tsDataTable ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+}
+
+.tsDataTable li {
+    float: left;
+}
+
+.tsDataTable li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.tsDataTable li a:hover {
+    background-color: #111;
+}
+
+.nav > li > a {
+  position: relative;
+  display: block;
+  padding: 15px 25px;
+  border-right: 1px solid #009933;
+  border-left: 1px solid #009933;
+}
+
+.container-nav {
+  padding-right: 29px;
+  padding-left: 29px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.navbar-brand {
+  float: left;
+  height: 50px;
+  padding: 15px 15px;
+  font-size: 18px;
+  line-height: 20px;
+  border-left: 1px solid #009933;
+}
+
+.navbar-inverse .navbar-nav > .active > a,
+.navbar-inverse .navbar-nav > .active > a:hover,
+.navbar-inverse .navbar-nav > .active > a:focus {
+  color: #fff;
+  background-color: #009933;
 }

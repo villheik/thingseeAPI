@@ -7,7 +7,7 @@
     }
 
     componentDidMount() {
-        fetch('http://192.168.0.103:3000/')
+        fetch('http://keios.dy.fi:3000/')
             .then((response) => {
                 return response.json();
             })
@@ -29,9 +29,10 @@
         );
         console.log(data);
         return (              
-            <table>
+            <table className="tsDataTable">
                 <thead>
                     <tr>
+                        <th>Timestamp</th>
                         <th>Temperature</th>
                         <th>Battery</th>
                     </tr>
@@ -46,5 +47,5 @@
 
 ReactDOM.render(
     <JsonReader />,
-    document.getElementById('jsonInput')
+    document.getElementById('jsonDiv')
 );
