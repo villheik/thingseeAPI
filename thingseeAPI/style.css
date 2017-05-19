@@ -90,3 +90,18 @@ html {
 #mainPageText{
 	font-size: 150%;
 }
+
+
+@media (min-width: 768px) {
+	.row.equal {
+		display: flex;
+		flex-wrap: wrap;
+	}
+	.dataBorderRight{
+		border-right: 1px solid #009933;		
+	}
+	.dataBorderLeft{
+	  border-left: 1px solid #009933;
+	}
+}
+
