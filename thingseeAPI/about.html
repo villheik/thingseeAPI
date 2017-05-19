@@ -6,8 +6,8 @@
     <meta name=viewport content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" type="text/css" href="./node_modules/bootstrap/dist/css/bootstrap.css">
     <link rel="stylesheet" type="text/css" href="./style.css" />
-    
-    <title>API server test</title>
+
+    <title>Keios.dy.fi</title>
     <script src="https://unpkg.com/react@latest/dist/react.js"></script>
     <script src="https://unpkg.com/react-dom@latest/dist/react-dom.js"></script>
     <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
@@ -26,42 +26,31 @@
                 <a class="navbar-brand" href="./index.html">keios.dy.fi</a>
             </div>
 
-            <div  id="navbar" class="collapse navbar-collapse">
+
+            <div id="navbar" class="collapse navbar-collapse">
                 <ul class="nav navbar-nav">
-                    <li><a href="./index.html">Home <span class="sr-only">(current)</span></a></li>
-                    <li class="active"><a href="./data.html">Data <span class="sr-only">(current)</span></a></li>
+                    <li><a href="./index.html">Home</a></li>
+                    <li><a href="./data.html">Data</a></li>
                     <li><a href="./stuff.html">Stuff</a></li>
                 </ul>
 
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href="./about.html">About</a></li>
+                    <li class="active"><a href="./about.html">About<span class="sr-only">(current)</span></a></li>
                 </ul>
             </div>
         </div>
     </nav>
+
     <div class="container mainDiv">
-        <div col-xs-3>
-            <h1>API server test</h1>
-        </div>
 
-        <div class="col-xs-6">           
-            <h4>The data is collected by a <a href="https://thingsee.com/">Thingsee device</a></h4>
-            <h4>Check my project on <a href="https://github.com/villheik/thingseeAPI">github</a></h4>
+        <h1>Yes I am a finnish boy and Yes I do hacking. Don't hit on me silly girls :)</h1>
+        <div id="mainPageText">
+            My <a href="https://github.com/villheik">Github</a>
         </div>
-
-        <div class="col-xs-6">           
-            <div id="jsonDiv"></div>
-            <script src="myclient.js" type="text/jsx">
-            </script>
-        </div>
-        
 
     </div>
 
-
-
     <script src="./node_modules/jquery/dist/jquery.min.js"></script>
     <script src="./node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
-
 </body>
 </html>

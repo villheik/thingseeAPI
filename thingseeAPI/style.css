@@ -3,12 +3,21 @@
     width:100%;      
 }
 
+.tsDataTable th{
+   background-color: #4CAF50;
+   color: white;
+}
+
+.tsDataTable tr:nth-child(odd){
+    background-color: white;
+}
+
 .tsDataTable tr:nth-child(even){
-    background-color: #f2f2f2;
+    background-color: #99ff99;
 }
 
 .tsDataTable tr:hover {
-    background-color: #746f6f;
+    background-color: #009933;
 }
 
 .tsDataTable ul {
@@ -61,4 +70,23 @@
 
 .mainDiv{
 	border: 1px solid #009933;
+	background-color: #f2f2f2;
+}
+
+#dataContainer {
+	background-color: #f2f2f2;
+	border-radius: 5px;
+}
+
+html { 
+  overflow-y: scroll; 
+}
+
+#dataExplanation{
+	border: 1px solid #009933;
+	background-color: white;
+}
+
+#mainPageText{
+	font-size: 150%;
 }
